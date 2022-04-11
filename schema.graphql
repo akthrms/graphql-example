@@ -1,8 +1,23 @@
-type Book {
-  title: String
-  author: String
+type Customer {
+  id: Int
+  name: String
+  email: String
+}
+
+type Item {
+  id: Int
+  name: String
+  price: Int
+}
+
+type Order {
+  id: Int
+  customer: Customer
+  items: [Item]
+  totalPrice: Int
 }
 
 type Query {
-  books: [Book!]!
+  getOrders: [Order]
+  getOrderById(Id: Int): Order!
 }
