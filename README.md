@@ -1,1 +1,1 @@
-# graphql-example
+# TypeScript + GraphQL サンプル
