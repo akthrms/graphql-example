@@ -14,5 +14,4 @@ export type Order = {
   id: number;
   customer: Customer;
   items: Item[];
-  totalPrice: number;
 };

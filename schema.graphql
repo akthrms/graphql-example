@@ -14,17 +14,19 @@ type Order {
   id: Int
   customer: Customer
   items: [Item]
-  totalPrice: Int
 }
 
 type Query {
   getCustomers: [Customer]
+  getItems: [Item]
   getOrders: [Order]
   getCustomer(id: Int): Customer
+  getItem(id: Int): Item
   getOrder(id: Int): Order
-  getOrdersByCustomerId(customerId: Int): [Order]
 }
 
 type Mutation {
   addCustomer(name: String, email: String): Customer
+  addItem(name: String, price: Int): Item
+  addOrder(customerId: Int, itemIds: [Int]): Order
 }
