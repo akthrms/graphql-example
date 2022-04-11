@@ -18,6 +18,12 @@ type Order {
 }
 
 type Query {
+  getCustomers: [Customer]
   getOrders: [Order]
-  getOrderById(Id: Int): Order!
+  getOrderById(id: Int): Order
+  getOrdersByCustomerId(customerId: Int): [Order]
+}
+
+type Mutation {
+  addCustomer(name: String, email: String): Customer
 }
