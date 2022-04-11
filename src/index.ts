@@ -60,7 +60,10 @@ const resolvers = {
 
     getOrders: () => orders,
 
-    getOrderById: (_: unknown, arg: { id: number }) =>
+    getCustomer: (_: unknown, arg: { id: number }) =>
+      customers.find(({ id }) => id === arg.id),
+
+    getOrder: (_: unknown, arg: { id: number }) =>
       orders.find(({ id }) => id === arg.id),
 
     getOrdersByCustomerId: (_: unknown, arg: { customerId: number }) =>
